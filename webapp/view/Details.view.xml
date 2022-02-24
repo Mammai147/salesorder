@@ -1,0 +1,21 @@
+<mvc:View controllerName="com.sap.o2cSD.salesorders.controller.Details"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+
+    <Page id="page" title="Details" showNavButton="true" navButtonPress="onNavBack">
+        <content>
+            <ObjectHeader id="_IDGenObjectHeader1" title="{SalesOrderID}" intro="{CustomerName}" number="{ parts:[{path:'GrossAmount'},{path:'CurrencyCode'}], type: 'sap.ui.model.type.Currency', formatOptions: {showMeasure: false} }" numberUnit="{CurrencyCode}" class="sapUiResponsivePadding--header">
+                <statuses>
+                    <ObjectStatus id="_IDGenObjectStatus1" text="{LifecycleStatusDescription}" state="{ path: 'LifecycleStatus', formatter: '.formatter.formatStatus'}"/>
+                </statuses>
+                <ObjectAttribute id="_IDGenObjectAttribute1" text="{path: 'CreatedAt', type: 'sap.ui.model.type.Date', formatOptions: { style: 'medium' }}"/>
+                <ObjectAttribute id="_IDGenObjectAttribute2" text="{Note}"/>
+            </ObjectHeader>
+            <List id="_IDGenList1" items="{ToLineItems}" headerText="Products">
+            <DisplayListItem id="_IDGenDisplayListItem1" label="{ProductID}" value="{Quantity}"/>
+            </List>
+             
+
+        </content>
+    </Page>
+</mvc:View>
